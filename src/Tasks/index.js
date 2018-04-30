@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 import Grid from 'material-ui/Grid';
 import List from 'material-ui/List';
@@ -30,8 +31,11 @@ class Tasks extends Component {
     }
     render() {
         const { tasks } = this.props;
-        return (<Grid container spacing={24}>
+        return (
+        <Grid container spacing={24}>
+        <h1>Tasks</h1>
             <Grid item xs>
+            <Link to="/">App</Link>
             <List>
                 {
                     tasks.items.map((item, key) => (
@@ -40,7 +44,8 @@ class Tasks extends Component {
                 }
             </List>
             </Grid>
-        </Grid>);
+        </Grid>
+        );
     } 
 };
 
